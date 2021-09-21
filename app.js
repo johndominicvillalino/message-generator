@@ -11,7 +11,19 @@ const jokes = [{
 
     message: `What did Yoda say when he saw himself in 4K? "HDMI.`
 }, {
-    messagE: `I'd like to go to Holland someday. Wooden shoe?`
+    message: `I'd lzxczxcen shoe?`
+}
+, {
+    message: `I'd likeasdasday. Wooden shoe?`
+}
+, {
+    message: `I'd like sddzxcay. Wooden shoe?`
+}
+, {
+    message: `I'd like aasdzxcWooden shoe?`
+}
+, {
+    message: `I'd asdasdzxczxchoe?`
 }
 ]
 
@@ -21,7 +33,7 @@ const jokes = [{
 
 const aRandomJoke = () => {
 
-    const numOfJokes = jokes.length - 1;
+    const numOfJokes = jokes.length;
 
     const randomNumGenerator = () => {
         return Math.floor(Math.random() * numOfJokes);
@@ -30,14 +42,14 @@ const aRandomJoke = () => {
     const randomArr = []
 
     //push random namber within the range of data length 
-    while (randomArr.length !== 4) {
+    while (randomArr.length !== jokes.length) {
         let picker = randomNumGenerator();
         if (!randomArr.includes(picker)) {
             randomArr.push(picker)
         }
     }
 
-    console.log(randomArr)
+    //console.log(randomArr)
 
     const logFunction = jokes.map(data => {
 
@@ -56,5 +68,5 @@ const aRandomJoke = () => {
 
 }
 
-console.log(aRandomJoke());
+aRandomJoke();
 

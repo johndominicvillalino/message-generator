@@ -33,12 +33,15 @@ const aRandomJoke = (numberOfJokes) => {
 
     //@checker
     if (numberOfJokes > jokes.length) {
+        console.log(`We have only ${jokes.length} jokes here, sorry.`)
         return `We have only ${jokes.length} jokes here, sorry.`
     }
     if (numberOfJokes < 1) {
+        console.log( "Okay, I'm done! Google it yourself!")
         return "Okay, I'm done! Google it yourself!"
     }
     if (typeof numberOfJokes !== "number" ||  isNaN(numberOfJokes)) {
+        console.log("Give me a number!!")
         return "Give me a number!!"
     }
     //@@ end of Checker @@
@@ -78,9 +81,8 @@ const aRandomJoke = (numberOfJokes) => {
         jokesArr.push(jokesWithFunction[randomArr[i]].joke)
     }
 
-    //logs in console invoking.
-
-    console.log(`\nHope you enjoy these jokes. If not, you need s*x! `);
+    //logs in console when.
+    console.log(`\nHope you enjoy this/these joke/s. If not, you need s*x! `);
 
     for(let i = 0; i < numberOfJokes ; i++){
         console.log(`\n${i+1}. ${jokesWithFunction[randomArr[i]].joke} `)
@@ -88,6 +90,8 @@ const aRandomJoke = (numberOfJokes) => {
     console.log(`\n`);
 
     //returns an array of jokes
+
+
     return jokesArr;
 
 }

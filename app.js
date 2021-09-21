@@ -17,26 +17,44 @@ const jokes = [{
 
 // random picker
 
-const numOfJokes = jokes.length -1;
-const picker = Math.floor(Math.random() * numOfJokes);
-
 //logs the randomly picked jokes
 
-const aRandomJoke = (picker) => {
+const aRandomJoke = () => {
+
+    const numOfJokes = jokes.length - 1;
+
+    const randomNumGenerator = () => {
+        return Math.floor(Math.random() * numOfJokes);
+    }
+
+    const randomArr = []
+
+    //push random namber within the range of data length 
+    while (randomArr.length !== 4) {
+        let picker = randomNumGenerator();
+        if (!randomArr.includes(picker)) {
+            randomArr.push(picker)
+        }
+    }
+
+    console.log(randomArr)
 
     const logFunction = jokes.map(data => {
 
         return {
             _message: data.message,
-            get joke(){
+            get joke() {
                 return this._message;
             }
         }
     })
 
-    return logFunction[picker].joke
+    //console log all jokes
+    for (let i = 0; i < randomArr.length; i++) {
+        console.log(logFunction[randomArr[i]].joke)
+    }
 
 }
 
+console.log(aRandomJoke());
 
-console.log(aRandomJoke(picker));
